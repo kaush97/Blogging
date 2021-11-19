@@ -23,7 +23,7 @@
   export default {
     methods: {
       loginPage() {
-        this.$router.push("/login");
+        this.$router.push("/mainpage");
       },
     },
   };

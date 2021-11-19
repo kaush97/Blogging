@@ -22,10 +22,10 @@
               loginPage();
               n.active = false;
             "
-            class="pl-8 red--text"
+            class="pl-8 white--text"
           >
             <v-list-item-icon>
-              <v-icon small>mdi-home</v-icon>
+              <v-icon color="white" small>mdi-home</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>Login</v-list-item-title>
