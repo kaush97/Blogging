@@ -74,6 +74,13 @@
 </template>
 <script>
   const img = require("../assets/background2.jpg");
+  import Vue from "vue";
+  import VueSweetalert2 from "vue-sweetalert2";
+
+  // If you don't need the styles, do not connect
+  import "sweetalert2/dist/sweetalert2.min.css";
+
+  Vue.use(VueSweetalert2);
   // import { authApi } from "@/api/auth";
   export default {
     name: "login-form",
@@ -122,11 +129,19 @@
           var validPassword = this.$store.state.password;
           var action = this.$store;
           let path = this.$router;
+          let alrt = this.$swal;
           setTimeout(function () {
             // console.log(a);
             if (username === validEmail && password === validPassword) {
+              alrt("Logged In", "You logged in successfully", "success");
               path.push("/home");
               action.dispatch("isLogedIn", true);
+            } else {
+              alrt(
+                "Invalid credentials?",
+                "Please enter valid username/password.",
+                "warning"
+              );
             }
           }, 2000);
         }
